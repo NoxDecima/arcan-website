@@ -1,11 +1,11 @@
 # arcan-website
 
-Static landing page for [Arcan](https://github.com/nox-decima/arcan) — a local-first,
+Static landing page for [Arcan](https://github.com/NoxDecima/arcan) — a local-first,
 end-to-end encrypted messenger. Built from the "Arcan Landing Explorations v2" design.
 
 - No build step: GitHub Pages serves the repo root (`main` branch).
 - No JavaScript, no third-party requests: fonts and icons are committed to the repo.
-- Live: https://OWNER.github.io/arcan-website/
+- Live: https://noxdecima.github.io/arcan-website/
 
 ## Editing
 
