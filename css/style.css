@@ -9,9 +9,6 @@ html, body { margin: 0; }
   font-family: var(--font-body);
   color: var(--nox-text);
 }
-@media (min-width: 1442px) {
-  .page { border-inline: 1px solid var(--nox-border); }
-}
 
 /* ---------- nav ---------- */
 .lp-nav {
