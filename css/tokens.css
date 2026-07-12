@@ -1,0 +1,256 @@
+/* =========================================================
+   NOX DESIGN SYSTEM — colors_and_type.css
+   "Nox Noir" — CLI structure · Tokyo Midnight · cosmic watermark
+   ========================================================= */
+
+/* Fonts are self-hosted — see fonts.css */
+
+:root {
+  /* ---------- PALETTE: DARK (primary surface) ---------- */
+  --nox-void:     #0b0d14;   /* page bg */
+  --nox-panel:    #12141f;   /* raised surface */
+  --nox-panel-2:  #1a1d2e;   /* deeper panel / hover */
+  --nox-border:   #232639;   /* hairlines */
+  --nox-text:     #c8d1f0;   /* primary fg on dark */
+  --nox-text-2:   #8a93b2;   /* secondary fg */
+  --nox-dim:      #5a6380;   /* tertiary / meta */
+  --nox-faint:    #3a4060;   /* disabled / watermark */
+
+  /* ---------- PALETTE: LIGHT (paper surface) ---------- */
+  --nox-paper:    #f4f3ee;   /* page bg */
+  --nox-paper-2:  #ebeae3;   /* raised */
+  --nox-ink:      #0b0d14;   /* fg */
+  --nox-ink-2:    #2a2e44;   /* secondary */
+  --nox-rule:     #d7d5cc;   /* hairlines */
+
+  /* ---------- ACCENTS ---------- */
+  --nox-blue:     #7aa2f7;   /* primary — tokyo blue */
+  --nox-violet:   #bb9af7;   /* secondary */
+  --nox-cyan:     #7dcfff;   /* tertiary */
+
+  /* ---------- SEMANTIC / TERMINAL ---------- */
+  --nox-green:    #9ece6a;   /* success / additions */
+  --nox-amber:    #e0af68;   /* warning */
+  --nox-red:      #f7768e;   /* error / deletions */
+  --nox-teal:     #73daca;   /* info alt */
+
+  /* ---------- GRADIENTS ---------- */
+  --nox-grad-primary: linear-gradient(90deg, var(--nox-blue), var(--nox-violet));
+  --nox-grad-rule:    linear-gradient(90deg, var(--nox-blue), var(--nox-violet), transparent);
+  --nox-grad-cosmic:  radial-gradient(ellipse 80% 60% at 90% 10%, var(--nox-panel) 0%, var(--nox-void) 60%),
+                      radial-gradient(ellipse 50% 40% at 10% 90%, #1a1a2e 0%, var(--nox-void) 50%);
+
+  /* ---------- TYPOGRAPHY — FAMILIES ---------- */
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'JetBrains Mono', ui-monospace, monospace;  /* display is mono in Nox */
+
+  /* ---------- TYPE SCALE ---------- */
+  /* Nox uses mono for display, sans for body. Tight tracking on display. */
+  --fs-hero:     clamp(48px, 7vw, 96px);   /* hero title */
+  --fs-display:  clamp(36px, 5vw, 64px);   /* slide / page title */
+  --fs-h1:       40px;
+  --fs-h2:       28px;
+  --fs-h3:       20px;
+  --fs-body:     15px;
+  --fs-body-lg:  17px;
+  --fs-small:    13px;
+  --fs-meta:     11px;    /* mono meta / timestamps */
+  --fs-micro:    10px;    /* caps labels */
+
+  --lh-tight:    1.05;
+  --lh-snug:     1.15;
+  --lh-body:     1.6;
+  --lh-loose:    1.75;
+
+  --tracking-display: -0.02em;   /* tighten mono display */
+  --tracking-title:   -0.01em;
+  --tracking-caps:    0.18em;    /* // CAPS · LABELS */
+  --tracking-caps-lg: 0.24em;
+
+  /* ---------- SPACING (8pt base, plus micro) ---------- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+  --sp-10: 128px;
+
+  /* ---------- RADII — low, almost-sharp ---------- */
+  --r-0:    0px;      /* terminal / CLI panels */
+  --r-1:    2px;      /* inputs, chips */
+  --r-2:    4px;      /* buttons */
+  --r-3:    6px;      /* cards */
+  --r-pill: 999px;
+
+  /* ---------- BORDERS ---------- */
+  --bw-hair:   1px;
+  --bw-thick:  2px;
+
+  /* ---------- SHADOWS (used sparingly; Nox prefers flat + hairline) ---------- */
+  --shadow-1: 0 1px 0 rgba(255,255,255,0.02) inset, 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-2: 0 4px 16px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.02) inset;
+  --shadow-glow-blue:   0 0 10px rgba(122,162,247,0.55);
+  --shadow-glow-violet: 0 0 10px rgba(187,154,247,0.55);
+  --shadow-glow-cyan:   0 0 8px  rgba(125,207,255,0.6);
+
+  /* ---------- MOTION ---------- */
+  --ease-out:  cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in:   cubic-bezier(0.4, 0, 1, 1);
+  --dur-fast:  120ms;
+  --dur-base:  200ms;
+  --dur-slow:  360ms;
+
+  /* ---------- LAYOUT ---------- */
+  --content-narrow: 640px;
+  --content:        860px;
+  --content-wide:   1120px;
+  --content-max:    1280px;
+}
+
+/* ====================================================
+   SEMANTIC ELEMENT STYLES
+   ==================================================== */
+html, body {
+  background: var(--nox-void);
+  color: var(--nox-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.nox-light, .nox-paper {
+  background: var(--nox-paper);
+  color: var(--nox-ink);
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-h1);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--lh-tight);
+  color: var(--nox-text);
+  margin: 0 0 var(--sp-4);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  letter-spacing: var(--tracking-title);
+  line-height: var(--lh-snug);
+  margin: 0 0 var(--sp-3);
+}
+
+h3, .h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  letter-spacing: 0;
+  line-height: var(--lh-snug);
+  margin: 0 0 var(--sp-2);
+}
+
+p, .p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--nox-text);
+  margin: 0 0 var(--sp-4);
+}
+
+.meta, code, kbd, samp, pre {
+  font-family: var(--font-mono);
+}
+
+.meta {
+  font-size: var(--fs-meta);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--nox-dim);
+}
+
+.caps {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--tracking-caps-lg);
+  text-transform: uppercase;
+  color: var(--nox-dim);
+}
+
+.prompt::before {
+  content: '// ';
+  color: var(--nox-dim);
+}
+
+.shell-prompt::before {
+  content: '$ ';
+  color: var(--nox-dim);
+}
+
+.arrow::before {
+  content: '▸ ';
+  color: var(--nox-blue);
+}
+
+code {
+  font-size: 0.92em;
+  color: var(--nox-blue);
+  background: var(--nox-panel);
+  padding: 2px 6px;
+  border-radius: var(--r-1);
+}
+
+a {
+  color: var(--nox-blue);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out);
+}
+a:hover {
+  border-bottom-color: var(--nox-blue);
+}
+
+hr, .rule {
+  border: 0;
+  height: 1px;
+  background: var(--nox-border);
+  margin: var(--sp-6) 0;
+}
+
+.rule-gradient {
+  border: 0;
+  height: 1px;
+  background: var(--nox-grad-rule);
+  margin: var(--sp-4) 0;
+  width: 120px;
+}
+
+/* ---------- Gradient text ---------- */
+.grad-text {
+  background: var(--nox-grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---------- Star / cosmic dot ---------- */
+.nox-star {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: var(--nox-blue);
+  border-radius: 50%;
+  box-shadow: var(--shadow-glow-blue);
+  pointer-events: none;
+}
+.nox-star--sm { width: 2px; height: 2px; box-shadow: none; opacity: 0.7; }
+.nox-star--violet { background: var(--nox-violet); box-shadow: var(--shadow-glow-violet); }
+.nox-star--cyan   { background: var(--nox-cyan);   box-shadow: var(--shadow-glow-cyan); }
