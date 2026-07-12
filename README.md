@@ -5,7 +5,7 @@ end-to-end encrypted messenger. Built from the "Arcan Landing Explorations v2" d
 
 - No build step: GitHub Pages serves the repo root (`main` branch).
 - No JavaScript, no third-party requests: fonts and icons are committed to the repo.
-- Live: https://noxdecima.github.io/arcan-website/
+- Live: https://arcan.nox-decima.dev/
 
 ## Editing
 
