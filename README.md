@@ -13,13 +13,15 @@ end-to-end encrypted messenger. Built from the "Arcan Landing Explorations v2" d
 `css/style.css` (page), `css/fonts.css` (@font-face). Local preview:
 `python3 -m http.server` and open http://localhost:8000.
 
-## Pending links
+## Release links
 
-These anchors are stubs (`href="#"`, marked `data-stub` in the HTML) until the
-destinations exist:
+The download buttons point at GitHub's permanent latest-release redirect:
 
-| data-stub | Where | Waiting on |
-|---|---|---|
-| `web-app` | nav, hero, download section ("open in browser") | Arcan web client URL |
-| `apk-download` | nav, hero, android card ("download") | first public APK release |
-| `checksums` | android card ("sha256 checksums") | published release checksums |
+    https://github.com/NoxDecima/arcan/releases/latest/download/app-universal-release.apk
+
+This always serves the newest release **as long as each release uploads its APK
+under the same asset name** (`app-universal-release.apk`). If the asset is ever
+renamed, update the three download links in `index.html` to match.
+
+The "sha256 checksums" link goes to the latest release page, where GitHub shows
+each asset's digest. "open in browser" links go to https://app.arcan.nox-decima.dev.

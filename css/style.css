@@ -415,6 +415,8 @@ html, body { margin: 0; }
 .why-grid { display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: center; }
 .dl-grid  { display: grid; grid-template-columns: 1.25fr 1fr; gap: var(--sp-5); align-items: stretch; }
 .dl2-side .soon2 { grid-template-columns: 1fr 1fr; }
+/* fill the stretched grid cell so the card's glow shadow hugs its visible edge */
+.dl2-android .inner { height: 100%; }
 .howto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; align-items: start; }
 .howto-grid .sec-title { font-size: 18px; }
 .howto-grid .steps { margin-top: 20px; }
@@ -480,6 +482,3 @@ html, body { margin: 0; }
     border-top: 1px solid var(--nox-border);
   }
 }
-
-/* pending destinations — tracked in README "Pending links" */
-[data-stub] { cursor: default; }
